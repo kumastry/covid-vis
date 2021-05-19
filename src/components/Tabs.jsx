@@ -1,13 +1,15 @@
 import { Link } from "react-router-dom";
-import react, {useState} from 'react';
-
+import react, {useEffect, useState} from 'react';
 
 const Tabs = () => {
   const [isActive, setIsActive] = useState('top');
+  useEffect(() => {
+    const url = window.location.pathname;
+    setIsActive(url.slice(1, url.length));
+  }, []);
     return(
-        
     <div class="tabs  is-boxed">
-      <ul>
+        <ul>
 
     <li className={isActive == 'top' && 'is-active'}>
         <Link to = '/' onClick = {() => setIsActive('top')}>
@@ -24,10 +26,10 @@ const Tabs = () => {
         </Link>
     </li>
 
-    <li className={isActive == 'circle' && 'is-active'}>
-      <Link to = '/circle'  onClick = {() => setIsActive('circle')}>
+    <li className={isActive == 'pie' && 'is-active'}>
+      <Link to = '/pie'  onClick = {() => setIsActive('pie')}>
         <span class="icon is-small"><i class="fas fa-chart-pie " aria-hidden="true"></i></span>
-        <span>Circle</span>
+        <span>Pie</span>
         </Link>
     </li>
 
@@ -35,6 +37,13 @@ const Tabs = () => {
       <Link to = '/geo' onClick = {() => setIsActive('geo')}>
         <span class="icon is-small"><i class="fas fa-globe-asia" aria-hidden="true"></i></span>
         <span>Geo</span>
+      </Link>
+    </li>
+
+    <li className={isActive == 'scatter' && 'is-active'}>
+      <Link to = '/scatter' onClick = {() => setIsActive('scatter')}>
+        <span class="icon is-small"><i class="fas fa-globe-asia" aria-hidden="true"></i></span>
+        <span>Scatter</span>
       </Link>
     </li>
     

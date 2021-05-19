@@ -1,12 +1,12 @@
+
 export async function fetchPrefectures() {
-    return await fetch(`https://covid19-japan-web-api.now.sh/api//v1/prefectures`).json();
+    const res = await fetch(`/api//v1/prefectures`);
+    console.log(res);
+    return await res.json();
 }
 
 export async function fetchTotal() {
-    return await fetch(`https://covid19-japan-web-api.now.sh/api//v1/total`).json();
-}
-
-export async function fetchPositives() {
-    return await fetch(`https://covid19-japan-web-api.now.sh/api//v1/positives`).json();
+    const res = await fetch(`/api//v1/total`);
+    return await res.json();
 }
 

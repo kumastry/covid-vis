@@ -1,34 +1,53 @@
 import {Chart} from 'react-google-charts';
 import React from 'react';
-
+import {ConvertedData1} from "./data.js";
 
 const Barchart = () => (
    
-        <div>
+        <div style ={{paddingLeft: "50px"}}>
             <Chart
-            width="90%"
-            height={600}
-            chartType="ColumnChart"
+            width={"500px"}
+            height={"300px"}
+            chartType="Bar"
             loader={<div>Loading Chart</div>}
-            data={[
-            ['City', '2010 Population', '2000 Population'],
-            ['New York City, NY', 8175000, 8008000],
-            ['Los Angeles, CA', 3792000, 3694000],
-            ['Chicago, IL', 2695000, 2896000],
-            ['Houston, TX', 2099000, 1953000],
-            ['Philadelphia, PA', 1526000, 1517000],
-            ]}
+            data={ConvertedData1()}
+            chartWrapperParams={{ view: { columns: [0, 2, 3] } }}
             options={{
-            title: 'positive number of Japan',
-            chartArea: { width: '60%' },
+          
+            title: 'The number of positive and death in Japan',
+            hAxis: { title: '感染者' },
+            vAxis: { title: '死者' },
+            chartArea: { width: '60%', height:'70%' },
+            series: {
+                0:{
+                    axis:'test'
+                }
+            },
             hAxis: {
                 title: 'Total Population',
                 minValue: 0,
             },
             vAxis: {
             title: 'City',
+            format:'decimal'
         },
         }}
+
+        chartPackages={['corechart', 'controls']}
+        controls={[
+            {
+                controlType: 'CategoryFilter',
+                options:{
+                    filterColumnIndex: 1,
+                    ui:{
+                        labelStacking: 'vertical',
+                        label:'地域を選択',
+                        allowTyping: false,
+                        allowMultiple: false,
+                    }
+                }
+            }
+        ]}
     />
     </div>
 
