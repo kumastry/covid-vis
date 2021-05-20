@@ -33,13 +33,6 @@ const Tabs = () => {
         </Link>
     </li>
 
-    <li className={isActive == 'geo' && 'is-active'}>
-      <Link to = '/geo' onClick = {() => setIsActive('geo')}>
-        <span class="icon is-small"><i class="fas fa-globe-asia" aria-hidden="true"></i></span>
-        <span>Geo</span>
-      </Link>
-    </li>
-
     <li className={isActive == 'scatter' && 'is-active'}>
       <Link to = '/scatter' onClick = {() => setIsActive('scatter')}>
         <span class="icon is-small"><i class="fas fa-globe-asia" aria-hidden="true"></i></span>

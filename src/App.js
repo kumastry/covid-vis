@@ -20,7 +20,7 @@ const Router = () => (
       <Route exact path ="/bar" component={bar}/>
       <Route exact path = '/pie' component={PieChart}/>
       <Route exact path ='/scatter' component={ScatterChart}/>
-      <Route exact path = '/geo' component={GeoChart}/>
+     
     </Switch>
   </BrowserRouter>
 );
