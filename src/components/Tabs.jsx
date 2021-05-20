@@ -11,7 +11,7 @@ const Tabs = () => {
     <div class="tabs  is-boxed">
         <ul>
 
-    <li className={isActive == 'top' && 'is-active'}>
+    <li className={isActive == '' && 'is-active'}>
         <Link to = '/' onClick = {() => setIsActive('top')}>
              <span class="icon is-small"><i className="fas fa-home" aria-hidden="true"></i></span>
             <span> Top </span>
