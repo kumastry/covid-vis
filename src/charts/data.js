@@ -2309,9 +2309,9 @@ export const ConvertedData3 = () => {
           area = "九州・沖縄";
       }
 
-      if(data.cases <= 300) {
-        return [data.name_ja, area,data.cases, data.deaths];
-      }
+      
+      return [data.name_ja, area,data.cases, data.deaths];
+      
   });
   
   Data.sort((a, b) => {
@@ -2322,11 +2322,13 @@ export const ConvertedData3 = () => {
     }
   });
 
-  console.log(Data);
-
-  Data.unshift(["都道府県", "地域", "感染者", "死者"]);
-  console.log(Data);
-  return Data;
+  
+  
+  const res = Data.filter(data => data[2] <= 20000);
+  console.log(res);
+  console.log('ffff')
+  res.unshift(["都道府県", "地域", "感染者", "死者"]);
+  return res;
 }   
 
 
