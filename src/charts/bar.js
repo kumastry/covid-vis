@@ -6,8 +6,8 @@ const Barchart = () => (
    
         <div style ={{paddingLeft: "50px"}}>
             <Chart
-            width={"500px"}
-            height={"300px"}
+            width={"95%"}
+            height={"100%"}
             chartType="Bar"
             loader={<div>Loading Chart</div>}
             data={ConvertedData1()}

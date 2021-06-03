@@ -37,7 +37,7 @@ const PieChart = () => {
 />
 </div>
 
-<div className="column" >
+<div className="column" style ={{paddingLeft: "50px"}}>
 <Chart
   width={'70%'}
   
